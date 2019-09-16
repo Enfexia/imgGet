@@ -14,3 +14,5 @@ The aim of the project is to download the images from the sites entered by the u
 ## Additional Note
 
 You should disable the "Ask where to save each file before downloading" option in Chrome (chrome://settings/downloads) to enable automatic download.
+
+Note that this is a risky action that can cause you to download malicious files from malicious websites.
