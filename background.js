@@ -4,10 +4,15 @@ let disableShelf = () => chrome.downloads.setShelfEnabled(false);
 
 
 function save(completeUrl) {
+
+  if(completeUrl.split(".").pop().length > 1 && completeUrl.split(".").pop().length < 6){
+    var fileNameExtension = completeUrl.split('.').pop().split()[0];
+  }
+
   chrome.downloads.download({
           url: completeUrl,
           conflictAction: "overwrite",
-          filename: "chromePhotos/" + completeUrl.replace(/[^a-z0-9]/gi, '_').toLowerCase()
+          filename: "chromePhotos/" + completeUrl.replace(/[^a-z0-9]/gi, '_').toLowerCase() + "." + fileNameExtension
       },function() {
         disableShelf();
       });
