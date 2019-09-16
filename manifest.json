@@ -1,0 +1,18 @@
+{
+  "name": "imgGet",
+  "version": "0.1",
+  "description": "A simple chrome extension for downloading images from web pages.",
+  "author": "Cem Çevik",
+  "manifest_version": 2,
+  "permissions": [
+    "<all_urls>",
+    "downloads.shelf",
+    "webRequest",
+    "downloads",
+    "file://*/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  }
+}
