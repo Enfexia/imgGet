@@ -1,4 +1,4 @@
-
+var fileNameExtension;
 let disableShelf = () => chrome.downloads.setShelfEnabled(false);
 
 
@@ -6,9 +6,13 @@ let disableShelf = () => chrome.downloads.setShelfEnabled(false);
 function save(completeUrl) {
 
   if(completeUrl.split(".").pop().length > 1 && completeUrl.split(".").pop().length < 6){
-    var fileNameExtension = completeUrl.split('.').pop().split()[0];
+    fileNameExtension = completeUrl.split('.').pop().split()[0];
   }
 
+  if(fileNameExtension === undefined){
+    fileNameExtension = "png";
+  }
+  
   chrome.downloads.download({
           url: completeUrl,
           conflictAction: "overwrite",
